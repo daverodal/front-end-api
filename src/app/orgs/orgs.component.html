@@ -1,0 +1,23 @@
+<div class="container">
+  <input [(ngModel)] = "searchTerm" placeholder="Search" (ngModelChange) = "search()"/>
+
+  <table class="table table-hover table-striped">
+    <thead class="thead-light">
+    <tr>
+      <th (click)="clickLogin()" [ngClass]="{reverse: reverse, active: column === 'login'}">Name</th>
+      <th>Url</th>
+      <th >Details</th>
+    </tr>
+    </thead>
+  <tbody>
+  <tr class="table" *ngFor="let org of orgs | orderBy: 'login' : reverse : true;">
+    <td class="name">{{org.login}}</td>
+    <td><a class="link" [href]="org.url">{{org.url}}</a></td>
+    <td>
+      <a classs="detail" [routerLink]="['/orgs/details/', org.login]">detail</a>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+
+</div>

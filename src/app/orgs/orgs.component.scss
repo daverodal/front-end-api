@@ -1,0 +1,24 @@
+.row-container{
+  display:flex;
+  justify-content: flex-start;
+}
+.name, .linkc
+
+
+{
+  width:30%;
+}
+th.active{
+  &::after{
+    margin-left: 5px;
+
+    content: '⬆️';
+  }
+  &.reverse{
+    &::after{
+      margin-left: 5px;
+      content: '⬇️';
+
+    }
+  }
+}

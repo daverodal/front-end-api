@@ -1,0 +1,34 @@
+<button [routerLink]="['/orgs']">Back</button>
+<p *ngIf="org">
+  {{org.name}}
+  <img [src]="org.avatar_url" alt="">
+  {{org.description}}
+  <span class="light" *ngIf="org && !org.description">no descriptions was offered</span>
+</p>
+<h2>Members</h2>
+<table class="table table-hover table-striped">
+  <thead class="thead-light">
+  <tr>
+    <th>Avatar</th>
+    <th>Link</th>
+    <th>Name</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let member of publicMembers" >
+    <td>
+      <img [src]="member.avatar_url" alt="">
+
+    </td>
+    <td>
+    <a class="link" [href]="member.html_url">{{member.html_url}}</a>
+
+    </td>
+    <td>
+      {{member.login}}
+
+    </td>
+  </tr>
+  </tbody>
+</table>
